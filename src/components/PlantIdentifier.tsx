@@ -148,7 +148,7 @@ const PlantIdentifier: React.FC = () => {
 			let data: PlantIdApiResponse;
 			if (debugMode) {
 				// Load mock data from local file
-				const response = await fetch('/src/sample-response.json');
+				const response = await fetch('/public/sample-response.json');
 				if (!response.ok) {
 					throw new Error('Failed to load mock data');
 				}
