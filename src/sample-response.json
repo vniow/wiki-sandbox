@@ -1,0 +1,125 @@
+{
+	"id": 1049639417,
+	"custom_id": null,
+	"meta_data": {
+		"latitude": null,
+		"longitude": null,
+		"date": "2025-07-18",
+		"datetime": "2025-07-18"
+	},
+	"uploaded_datetime": 1752811863.922172,
+	"finished_datetime": 1752811864.356698,
+	"images": [
+		{
+			"file_name": "46b3360e54064297bd7ed9c428cb80ca.jpg",
+			"url": "https://plant.id/media/imgs/46b3360e54064297bd7ed9c428cb80ca.jpg"
+		}
+	],
+	"suggestions": [
+		{
+			"id": 104963941700,
+			"plant_name": "Papaver rhoeas",
+			"probability": 0.2889,
+			"confirmed": false,
+			"plant_details": {
+				"language": "en",
+				"scientific_name": "Papaver rhoeas",
+				"structured_name": {
+					"genus": "papaver",
+					"species": "rhoeas"
+				}
+			}
+		},
+		{
+			"id": 104963941701,
+			"plant_name": "Rosa × odorata",
+			"probability": 0.092,
+			"confirmed": false,
+			"plant_details": {
+				"language": "en",
+				"scientific_name": "Rosa × odorata",
+				"structured_name": {
+					"genus": "rosa",
+					"hybrid": "odorata"
+				}
+			}
+		},
+		{
+			"id": 104963941702,
+			"plant_name": "Tulipa gesneriana",
+			"probability": 0.0659,
+			"confirmed": false,
+			"plant_details": {
+				"language": "en",
+				"scientific_name": "Tulipa gesneriana",
+				"structured_name": {
+					"genus": "tulipa",
+					"species": "gesneriana"
+				}
+			}
+		},
+		{
+			"id": 104963941703,
+			"plant_name": "Palicourea elata",
+			"probability": 0.0451,
+			"confirmed": false,
+			"plant_details": {
+				"language": "en",
+				"scientific_name": "Palicourea elata",
+				"structured_name": {
+					"genus": "palicourea",
+					"species": "elata"
+				}
+			}
+		},
+		{
+			"id": 104963941704,
+			"plant_name": "Paeonia tenuifolia",
+			"probability": 0.0428,
+			"confirmed": false,
+			"plant_details": {
+				"language": "en",
+				"scientific_name": "Paeonia tenuifolia",
+				"structured_name": {
+					"genus": "paeonia",
+					"species": "tenuifolia"
+				}
+			}
+		},
+		{
+			"id": 104963941705,
+			"plant_name": "Rosa lucieae",
+			"probability": 0.0365,
+			"confirmed": false,
+			"plant_details": {
+				"language": "en",
+				"scientific_name": "Rosa lucieae",
+				"structured_name": {
+					"genus": "rosa",
+					"species": "lucieae"
+				}
+			}
+		},
+		{
+			"id": 104963941706,
+			"plant_name": "Doryanthes excelsa",
+			"probability": 0.028,
+			"confirmed": false,
+			"plant_details": {
+				"language": "en",
+				"scientific_name": "Doryanthes excelsa",
+				"structured_name": {
+					"genus": "doryanthes",
+					"species": "excelsa"
+				}
+			}
+		}
+	],
+	"modifiers": [],
+	"secret": "giq2Kkhzwvq1vqD",
+	"fail_cause": null,
+	"countable": true,
+	"feedback": null,
+	"is_plant": false,
+	"is_plant_probability": 0.27037075
+}
