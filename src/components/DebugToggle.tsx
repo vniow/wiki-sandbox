@@ -16,7 +16,7 @@ export default function DebugToggle({
 	return (
 		<div>
 			<SectionHeader className='mb-1'>debug mode</SectionHeader>
-			<label className='flex items-center mb-6 text-slate-700 dark:text-slate-300 cursor-pointer'>
+			<label className='flex items-center mb-6 text-slate-300 cursor-pointer'>
 				<input
 					type='checkbox'
 					checked={debugMode}

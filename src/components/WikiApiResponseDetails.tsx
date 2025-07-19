@@ -21,23 +21,23 @@ export default function WikiApiResponseDetails({
 			style={{ background: 'var(--gradient-card-4)' }}
 		>
 			<div
-				className='flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors'
+				className='flex items-center justify-between p-4 cursor-pointer hover:bg-secondary transition-colors'
 				onClick={() => setExpanded(!expanded)}
 			>
 				<SectionHeader>Wikimedia API response</SectionHeader>
 				<button
-					className='text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium'
+					className='text-sm text-primary hover:text-surface font-medium'
 					onClick={(e) => {
 						e.stopPropagation();
 						setExpanded(!expanded);
 					}}
 				>
-					{expanded ? 'Hide' : 'Show'}
+					{expanded ? 'hide' : 'show'}
 				</button>
 			</div>
 			{expanded && (
-				<div className='border-t border-slate-200 dark:border-slate-700 max-h-64 overflow-y-auto p-4 bg-slate-50 dark:bg-slate-900'>
-					<pre className='whitespace-pre-wrap break-words text-xs text-slate-700 dark:text-slate-300 font-mono'>
+				<div className='border-t border-surface-alt max-h-64 overflow-y-auto p-4 bg-background'>
+					<pre className='whitespace-pre-wrap break-words text-xs text-surface font-mono'>
 						{JSON.stringify(data, null, 2)}
 					</pre>
 				</div>

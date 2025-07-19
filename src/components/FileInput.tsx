@@ -20,7 +20,7 @@ export default function FileInput({ onFileChange, disabled }: FileInputProps) {
 			accept='image/*'
 			disabled={disabled}
 			onChange={(e) => onFileChange(e.target.files?.[0] ?? null)}
-			className='block w-full px-3 py-2 border border-surface-alt dark:border-surface rounded-lg bg-white dark:bg-surface text-black dark:text-white focus:ring-2 focus:ring-primary focus:border-primary disabled:bg-background dark:disabled:bg-surface-alt disabled:cursor-not-allowed file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:bg-background dark:file:bg-surface-alt file:text-black dark:file:text-white file:cursor-pointer'
+			className='block w-full px-3 py-2 border border-surface-alt rounded-lg bg-background text-black focus:ring-2 focus:ring-primary focus:border-primary disabled:bg-background disabled:cursor-not-allowed file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:bg-background file:text-black file:cursor-pointer'
 		/>
 	);
 }

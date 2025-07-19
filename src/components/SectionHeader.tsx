@@ -14,7 +14,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
 	return (
 		<h2
-			className={`text-xl sm:text-2xl font-bold mb-3 text-slate-900 dark:text-slate-100 tracking-tight ${className}`.trim()}
+			className={`text-xl sm:text-2xl font-bold mb-3 text-slate-100 tracking-tight ${className}`.trim()}
 		>
 			{children}
 		</h2>

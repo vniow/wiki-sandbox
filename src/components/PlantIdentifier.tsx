@@ -3,7 +3,7 @@ import FileInput from './FileInput';
 import ImagePreview from './ImagePreview';
 import DebugToggle from './DebugToggle';
 import SuggestionsList from './SuggestionsList';
-import ApiResponseDetails from './ApiResponseDetails';
+import PlantIDApiResponseDetails from './PlantIDApiResponseDetails';
 import WikiApiResponseDetails from './WikiApiResponseDetails';
 import ErrorMessage from './ErrorMessage';
 import LoadingIndicator from './LoadingIndicator';
@@ -75,52 +75,56 @@ function PlantIdentifier() {
 	};
 
 	return (
-		<div className='min-h-screen bg-background dark:bg-surface-alt py-8'>
-			<div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<div className='min-h-screen py-8'>
+			<div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 glass-container'>
 				<div className='text-center mb-8'>
-					<SectionHeader className='text-2xl font-bold'>
-						ID that plant!
-					</SectionHeader>
+					<SectionHeader className='mt-4'>ID that plant!</SectionHeader>
 				</div>
-				<div
-					className='rounded-xl shadow-lg p-6 mb-6'
-					style={{ background: 'var(--gradient-card-1)' }}
-				>
-					<FileInput
-						onFileChange={handleFileChange}
-						disabled={loading || wikiLoading}
-					/>
-					<ImagePreview url={previewUrl} />
-					<button
-						className='mt-6 px-6 py-3 bg-primary hover:bg-accent text-white font-medium rounded-lg transition-colors duration-200 disabled:bg-surface-alt disabled:cursor-not-allowed'
-						onClick={handleIdentify}
-						disabled={loading || wikiLoading}
-					>
-						{debugMode ? 'load mock data' : 'ID that plant!'}
-					</button>
-					<DebugToggle
-						debugMode={debugMode}
-						setDebugMode={setDebugMode}
-					/>
-					<ErrorMessage message={error} />
-					<LoadingIndicator
-						message={
-							loading
-								? 'identifying...'
-								: wikiLoading
-								? 'loading Wikipedia links...'
-								: undefined
-						}
-					/>
+				<div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-start'>
+					<div>
+						<div
+							className='rounded-xl shadow-lg p-6 mb-6 glass-card'
+							style={{ background: 'var(--gradient-card-1)' }}
+						>
+							<FileInput
+								onFileChange={handleFileChange}
+								disabled={loading || wikiLoading}
+							/>
+							<ImagePreview url={previewUrl} />
+							<button
+								className='mt-6 px-6 py-3 bg-primary hover:bg-accent text-white font-medium rounded-lg transition-colors duration-200 disabled:bg-surface-alt disabled:cursor-not-allowed'
+								onClick={handleIdentify}
+								disabled={loading || wikiLoading}
+							>
+								{debugMode ? 'load mock data' : 'ID that plant!'}
+							</button>
+							<DebugToggle
+								debugMode={debugMode}
+								setDebugMode={setDebugMode}
+							/>
+							<ErrorMessage message={error} />
+							<LoadingIndicator
+								message={
+									loading
+										? 'identifying...'
+										: wikiLoading
+										? 'loading Wikipedia links...'
+										: undefined
+								}
+							/>
+						</div>
+						<PlantIDApiResponseDetails data={apiResult} />
+					</div>
+					<div>
+						<WikiApiResponseDetails data={wikiRawResponses} />
+						<SuggestionsList
+							suggestions={apiResult?.suggestions || []}
+							wikiRawResponses={wikiRawResponses}
+							wikiLoading={wikiLoading}
+							wikiError={wikiError}
+						/>
+					</div>
 				</div>
-				<ApiResponseDetails data={apiResult} />
-				<WikiApiResponseDetails data={wikiRawResponses} />
-				<SuggestionsList
-					suggestions={apiResult?.suggestions || []}
-					wikiRawResponses={wikiRawResponses}
-					wikiLoading={wikiLoading}
-					wikiError={wikiError}
-				/>
 			</div>
 		</div>
 	);

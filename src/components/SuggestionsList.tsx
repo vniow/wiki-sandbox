@@ -1,4 +1,3 @@
-// ...existing imports...
 import type { Suggestion, WikipediaArticle } from '../utils/api';
 import SectionHeader from './SectionHeader';
 
@@ -9,13 +8,6 @@ interface SuggestionsListProps {
 	wikiError: string | null;
 }
 
-/**
- * Renders a list of plant suggestions and corresponding Wikipedia links.
- * @param suggestions Array of plant suggestions.
- * @param wikiRawResponses Nested arrays of WikipediaArticle responses.
- * @param wikiLoading Loading state for Wikipedia fetch.
- * @param wikiError Error message for Wikipedia fetch.
- */
 export default function SuggestionsList({
 	suggestions,
 	wikiRawResponses,
@@ -24,7 +16,7 @@ export default function SuggestionsList({
 }: SuggestionsListProps) {
 	if (suggestions.length === 0) return null;
 
-	// Step 1: Detect browser language
+	// Detect browser language
 	const browserLang =
 		typeof navigator !== 'undefined'
 			? (
@@ -37,22 +29,20 @@ export default function SuggestionsList({
 
 	return (
 		<div
-			className='rounded-xl shadow-lg p-6'
+			className='rounded-xl shadow-lg p-6 mb-6'
 			style={{ background: 'var(--gradient-card-3)' }}
 		>
 			<SectionHeader>Plant suggestions</SectionHeader>
 			{wikiError && (
-				<div className='mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
-					<p className='text-red-700 dark:text-red-400 text-sm'>
+				<div className='mb-4 p-3 bg-accent/10 border border-accent rounded-lg'>
+					<p className='text-accent text-sm'>
 						error loading Wikipedia links: {wikiError}
 					</p>
 				</div>
 			)}
-			<div className='space-y-4'>
+			<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
 				{suggestions.map((s, idx) => {
-					// Step 2: Filter articles by browser language with fallback
 					const allArticles = wikiRawResponses[idx] || [];
-					// Only include articles with a Wikipedia URL
 					const isWikipediaUrl = (url?: string) =>
 						typeof url === 'string' && /wikipedia\.org\/wiki\//.test(url);
 
@@ -63,7 +53,6 @@ export default function SuggestionsList({
 							article.in_language.identifier.toLowerCase() === browserLang &&
 							isWikipediaUrl(article.url)
 					);
-					// Fallback to base language if no match
 					if (articles.length === 0 && baseLang !== browserLang) {
 						articles = allArticles.filter(
 							(article) =>
@@ -76,9 +65,9 @@ export default function SuggestionsList({
 					return (
 						<div
 							key={s.id}
-							className='bg-slate-50 dark:bg-slate-700 p-4 rounded-lg border border-slate-200 dark:border-slate-600'
+							className='bg-background p-4 rounded-lg border border-surface-alt'
 						>
-							<h3 className='font-semibold text-slate-900 dark:text-slate-100 mb-2'>
+							<h3 className='font-semibold text-primary mb-2'>
 								{s.plant_name}
 							</h3>
 							{wikiLoading ? (

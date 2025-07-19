@@ -13,9 +13,5 @@ interface LoadingIndicatorProps {
  */
 export default function LoadingIndicator({ message }: LoadingIndicatorProps) {
 	if (!message) return null;
-	return (
-		<div className='p-2 text-center text-sm text-gray-700 dark:text-gray-300'>
-			{message}
-		</div>
-	);
+	return <div className='p-2 text-center text-sm text-surface'>{message}</div>;
 }

@@ -13,7 +13,7 @@ export default function ImagePreview({ url }: ImagePreviewProps) {
 	return (
 		<div className='mt-6'>
 			<SectionHeader>Image preview</SectionHeader>
-			<div className='w-full max-w-md mx-auto aspect-square bg-background dark:bg-surface-alt rounded-lg overflow-hidden border border-surface-alt dark:border-surface'>
+			<div className='w-full max-w-md mx-auto aspect-square rounded-lg overflow-hidden '>
 				<img
 					src={url}
 					alt='Selected preview'
