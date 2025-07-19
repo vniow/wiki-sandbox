@@ -1,12 +1,7 @@
-import './App.css';
 import PlantIdentifier from './components/PlantIdentifier';
 
 function App() {
-	return (
-		<div className='App'>
-			<PlantIdentifier />
-		</div>
-	);
+	return <PlantIdentifier />;
 }
 
 export default App;
